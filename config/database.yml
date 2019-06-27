@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: Hue123456@
+  password: 1581998
   host: localhost
   database: rikai
   socket: /var/run/mysqld/mysqld.sock
@@ -53,4 +53,4 @@ production:
   <<: *default
   database: rikai
   username: root
-  password: Hue123456@
+  password: 1581998

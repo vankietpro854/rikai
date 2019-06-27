@@ -1,5 +1,12 @@
-<h1>New User</h1>
 
-<%= render 'form', user: @user %>
+<% provide(:button_text, 'Create my account') %>
+
+<h1 align="center">New User</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render 'form' %>
+  </div>
+</div>
 
 <%= link_to 'Back', users_path %>

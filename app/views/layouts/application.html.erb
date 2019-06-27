@@ -7,9 +7,56 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" media="all" href="/assets/scaffolds.self.css?body=1" data-turbolinks-track="reload" />
+    <link rel="stylesheet" media="all" href="/assets/static_pages.self.css?body=1" data-turbolinks-track="reload" />
+    <link rel="stylesheet" media="all" href="/assets/users.self.css?body=1" data-turbolinks-track="reload" />
+
+    <style>
+    .fakeimg {
+      height: 200px;
+      background: #aaa;
+    }
+
+    #header {
+        background-image: url("/assets/lap.jpg");
+        background-repeat: no-repeat;
+        min-height: 100%;
+        background-size: 100% 88%;
+      }
+      #jumbotron_id{
+      background: unset;
+      height: 400px;
+      }
+
+      .container-fluid .jumbotron {
+        padding-left: 60px;
+        padding-right: 60px;
+        padding-top: 100px;
+      }
+    </style>
+
   </head>
 
   <body>
-    <%= yield %>
+
+
+    <%= render 'shared/header' %>
+      
+
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+    <hr>
+     
+
+     <%= render 'shared/footer' %>      
   </body>
 </html>
