@@ -1,0 +1,36 @@
+<%= form_for(@chapter, local: true) do |form| %>
+  <% if @chapter.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+        The form contains <%= pluralize(@user.errors.count, "error") %>.
+      </div>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :course_id %>
+    <%= form.collection_select :course_id, Cour.order(:name),:id,:name, include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :chapter_image %>
+    <%= form.text_field :chapter_image, class: 'form-control' %>
+  </div>
+
+  <%= form.submit yield(:button_text), class: "btn btn-primary" %></br>
+<% end %>
