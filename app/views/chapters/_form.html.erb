@@ -24,13 +24,8 @@
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_field :content, class: 'form-control' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :chapter_image %>
-    <%= form.text_field :chapter_image, class: 'form-control' %>
-  </div>
+    <%= form.cktext_area :content, :size => 5, :ckeditor => {:language => "us"}  %>
+  </div>  
 
   <%= form.submit yield(:button_text), class: "btn btn-primary" %></br>
 <% end %>

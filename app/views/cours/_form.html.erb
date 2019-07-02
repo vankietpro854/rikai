@@ -3,10 +3,10 @@
   <% if @cour.errors.any? %>
 	  <div id="error_explanation">
 	    <div class="alert alert-danger">
-	      The form contains <%= pluralize(@user.errors.count, "error") %>.
+	      The form contains <%= pluralize(@cour.errors.count, "error") %>.
 	    </div>
 	    <ul>
-	      <% @user.errors.full_messages.each do |msg| %>
+	      <% @cour.errors.full_messages.each do |msg| %>
 	      <li><%= msg %></li>
 	    <% end %>
 	    </ul>
@@ -16,6 +16,17 @@
   <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control' %></br>
 
-  <%= f.submit yield(:button_text), class: "btn btn-primary" %></br>
+  <%= f.label :image_cours %>
+  <%= f.file_field :image_cours, class: 'form-control-file' %></br>
 
+  <%= f.label :content %>
+  <%= f.cktext_area :content, :size => 5, :ckeditor => {:language => "us"}  %>
+
+  </br>
+
+  <%= f.label :time_learn %>
+  <%= f.text_field :time_learn, class: 'form-control' %></br>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %></br>
+	
 <% end %>

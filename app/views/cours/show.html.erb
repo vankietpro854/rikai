@@ -5,5 +5,22 @@
   <%= @cour.name %>
 </p>
 
+<p>
+  <strong>Image:</strong>
+  <%= @cour.image_cours %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= raw(@cour.content) %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @cour.time_learn %>
+</p>
+
+
+
 <%= link_to 'Edit', edit_cour_path(@cour) %> |
 <%= link_to 'Back', cours_path %>
