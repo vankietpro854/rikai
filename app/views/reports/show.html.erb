@@ -7,12 +7,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @report.user_id %>
+  <%= @report.user.name %>
 </p>
 
 <p>
   <strong>Content:</strong>
-  <%= @report.content %>
+  <%= raw(@report.content) %>
 </p>
 
 <%= link_to 'Edit', edit_report_path(@report) %> |

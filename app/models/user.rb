@@ -11,4 +11,5 @@ class User < ApplicationRecord
   validates :phone, presence: true, length: { maximum: 10 }
 
   validates :date, presence: true
+  has_many :reports
 end

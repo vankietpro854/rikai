@@ -19,8 +19,8 @@
       <tr>
         <td><%= report.id %></td>
         <td><%= report.title %></td>
-        <td><%= report.user_id %></td>
-        <td><%= report.content %></td>
+        <td><%= report.user.name if report.user %></td>
+        <td><%= raw(report.content) %></td>
         <td class="text-center">
           <%= link_to 'Show', report %> |
           <%= link_to 'Edit', edit_report_path(report) %> |
