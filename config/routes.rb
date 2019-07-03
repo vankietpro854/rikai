@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reports
   resources :chapters
   resources :cours
   root 'static_pages#home'

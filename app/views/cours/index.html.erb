@@ -1,11 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Cours</h1>
-
-<table>
-  <thead>
+<hr>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
+      <th>#</th>
       <th>Name</th>
+      <th>Content</th>
+      <th>Time learn</th>
+      <th class="text-center">Edit</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,10 +17,15 @@
   <tbody>
     <% @cours.each do |cour| %>
       <tr>
+        <td><%= cour.id %></td>
         <td><%= cour.name %></td>
-        <td><%= link_to 'Show', cour %></td>
-        <td><%= link_to 'Edit', edit_cour_path(cour) %></td>
-        <td><%= link_to 'Destroy', cour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= raw(cour.content) %></td>
+        <td><%= cour.time_learn %></td>
+        <td class="text-center">
+          <%= link_to 'Show', cour %> |
+          <%= link_to 'Edit', edit_user_path(cour) %> |
+          <%= link_to 'Destroy', cour, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>

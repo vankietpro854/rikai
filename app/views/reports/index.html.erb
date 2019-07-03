@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reports</h1>
+<hr>
+<table class="table"> 
+  <thead class="thead-dark">
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>User</th>
+      <th>Content</th>
+      <th class="text-center">Edit</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+        <td><%= report.id %></td>
+        <td><%= report.title %></td>
+        <td><%= report.user_id %></td>
+        <td><%= report.content %></td>
+        <td class="text-center">
+          <%= link_to 'Show', report %> |
+          <%= link_to 'Edit', edit_report_path(report) %> |
+          <%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Report', new_report_path %>
