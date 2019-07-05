@@ -1,20 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<form>
+		<p id="notice"><%= notice %></p>
+		<div class="form-row">
+			<div class="form-group col-md-8">
+				<p>
+				  <strong>Name:</strong>
+				  <%= @chapter.name %>
+				</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @chapter.name %>
-</p>
+				<p>
+				  <strong>Content:</strong>
+				  <%= raw(@chapter.content) %>
+				</p>
+				
+				<p>
+				  <strong>Course:</strong>
+				  <%= @chapter.cour.name %>
+				</p>
+			</div>
+		</div>
+	</form>
+</div>
 
-<p>
-  <strong>Content:</strong>
-  <%= raw(@chapter.content) %>
-</p>
 
-<p>
-  <strong>Course:</strong>
-  <%= @chapter.cour.name %>
-</p>
 
 
 <%= link_to 'Edit', edit_chapter_path(@chapter) %> |
 <%= link_to 'Back', chapters_path %>
+
+

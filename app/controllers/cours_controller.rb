@@ -64,11 +64,11 @@ class CoursController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cour
-      @cour = Cour.find(params[:id])
+      @cour = Cour.find_by(id: [params[:id], params[:cour_id]])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cour_params
-      params.require(:cour).permit(:name, :image_cours, :content, :time_learn)
+      params.require(:cour).permit(:name,:image_cours, :content, :time_learn)
     end
 end
