@@ -1,25 +1,25 @@
-<%= form_for(@chapter, local: true) do |form| %>
-  <% if @chapter.errors.any? %>
+<%= form_for(@report, local: true) do |form| %>
+  <% if @report.errors.any? %>
     <div id="error_explanation">
       <div class="alert alert-danger">
-        The form contains <%= pluralize(@chapter.errors.count, "error") %>.
+        The form contains <%= pluralize(@report.errors.count, "error") %>.
       </div>
       <ul>
-        <% @chapter.errors.full_messages.each do |msg| %>
+        <% @report.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :cour_id %>
-    <%= form.collection_select(:cour_id, Cour.order(:name),:id,:name, include_blank: true) %>
+   <div class="field">
+    <%= form.label :User %>
+    <%= form.collection_select :user_id, User.order(:name),:id,:name, include_blank: true %>
   </div>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: 'form-control' %>
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
 
   <div class="field">

@@ -1,12 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Users</h1>
-
-<table>
-  <thead>
+<hr>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
+      <th>#</th>
       <th>Name</th>
       <th>Email</th>
+      <th>Image</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>DateOfBirth</th>
+      <th class="text-center">Edit</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,11 +20,18 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= user.id %></td>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= user.image %></td>
+        <td><%= user.address %></td>
+        <td><%= user.phone %></td>
+        <td><%= user.date %></td>
+        <td class="text-center">
+          <%= link_to 'Show', user %> |
+          <%= link_to 'Edit', edit_user_path(user) %> |
+          <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>

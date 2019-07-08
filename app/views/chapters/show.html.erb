@@ -1,20 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<form>
+		<p id="notice"><%= notice %></p>
+		<div class="form-row">
+			<div class="form-group col-md-3">
+				<strong>Name:</strong>
+			  	<ul class="list-group">
+				  <% @chapters.each do |chapter| %>
+				  	<% if chapter.cour.name == @chapter.cour.name %>
+					  <%= link_to chapter.name, chapter %>
+					 <% end %>
+				  <% end %>
+				</ul>
+			</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @chapter.name %>
-</p>
+			<div class="form-group col-md-9">
+				<p>
+				  <strong>Name:</strong>
+				  <%= @chapter.name %>
+				</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= raw(@chapter.content) %>
-</p>
+				<p>
+				  <strong>Content:</strong>
+				  <%= raw(@chapter.content) %>
+				</p>
+				
+				<p>
+				  <strong>Course:</strong>
+				  <%= @chapter.cour.name %>
+				</p>
+			</div>
 
-<p>
-  <strong>Course:</strong>
-  <%= @chapter.course_id %>
-</p>
+			
+		</div>
+	</form>
+</div>
+
+
 
 
 <%= link_to 'Edit', edit_chapter_path(@chapter) %> |
 <%= link_to 'Back', chapters_path %>
+
+

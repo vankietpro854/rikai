@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_02_031548) do
+ActiveRecord::Schema.define(version: 2019_07_03_074257) do
 
   create_table "chapters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.text "content"
-    t.integer "course_id"
-    t.string "chapter_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "cour_id"
+    t.index ["cour_id"], name: "index_chapters_on_cour_id"
   end
 
   create_table "cours", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 2019_07_02_031548) do
     t.text "content"
     t.integer "time_learn"
     t.string "image_cours"
+  end
+
+  create_table "reports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_reports_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -41,4 +50,6 @@ ActiveRecord::Schema.define(version: 2019_07_02_031548) do
     t.datetime "date"
   end
 
+  add_foreign_key "chapters", "cours"
+  add_foreign_key "reports", "users"
 end

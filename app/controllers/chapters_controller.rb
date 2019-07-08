@@ -10,6 +10,7 @@ class ChaptersController < ApplicationController
   # GET /chapters/1
   # GET /chapters/1.json
   def show
+    @chapters = Chapter.all
   end
 
   # GET /chapters/new
@@ -69,6 +70,6 @@ class ChaptersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chapter_params
-      params.require(:chapter).permit(:name, :content, :course_id, :chapter_image)
+      params.require(:chapter).permit(:name, :content, :cour_id, :chapter_image)
     end
 end

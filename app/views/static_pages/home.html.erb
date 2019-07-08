@@ -16,10 +16,17 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Support</a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li> -->
     </ul>
+
+    <hr>
+nav-link
+    <h3>Một số khóa học cơ bản</h3>
+    <ul class="nav nav-pills flex-column">
+      <% Cour.all.each do |cour| %> 
+        <li ><%= link_to cour.name, cour %></li>
+      <% end %>
+    </ul>
+
     <hr class="d-sm-none">
   </div>
   <div class="col-8">
@@ -42,3 +49,4 @@
   </div>
 </div>
 
+@User.find(user_id).name
