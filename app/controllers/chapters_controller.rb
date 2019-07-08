@@ -10,6 +10,7 @@ class ChaptersController < ApplicationController
   # GET /chapters/1
   # GET /chapters/1.json
   def show
+    @chapters = Chapter.all
   end
 
   # GET /chapters/new

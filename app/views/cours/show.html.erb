@@ -2,7 +2,7 @@
 	<form>
 		<p id="notice"><%= notice %></p>
 		<div class="form-row">
-			<div class="form-group col-md-8">
+			<div class="form-group col-md-6">
 				<p>
 				  <strong>Name:</strong>
 				  <%= @cour.name %>
@@ -23,9 +23,23 @@
 				  <%= @cour.time_learn %> Month
 				</p>
 			</div>
+
+			<div class="form-group col-md-6">
+				  <strong>Name:</strong>
+				  	<ul class="list-group">
+					  <% @chapters.each do |chapter| %>
+						<% if chapter.cour.name == @cour.name %>
+						  <%= link_to chapter.name, chapter %>
+						<% end %>
+					  		
+					  <% end %>
+					</ul>
+
+			</div>
 		</div>
 	</form>
 </div>
 
 <%= link_to 'Edit', edit_cour_path(@cour) %> |
 <%= link_to 'Back', cours_path %>
+	
